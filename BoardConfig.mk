@@ -1,9 +1,8 @@
-# mt6580 platform boardconfig
-LOCAL_PATH := device/infinix/x510
--include vendor/infinix/x510/BoardConfigVendor.mk
+# Paths
+TREE_PATH := device/walton/nf2
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
+# MT6580 platform boardconfig
+TARGET_SPECIFIC_HEADER_PATH := $(TREE_PATH)/include
 USE_CAMERA_STUB := true
 TARGET_PROVIDES_INIT_RC := true
 
@@ -42,7 +41,6 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32S1,32S1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x80f00000 --tags_offset 0x0e000000 --board R09
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 
 TARGET_KMODULES := true
 # Disable memcpy opt (for audio libraries)
@@ -50,9 +48,7 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 # Display
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+BOARD_EGL_CFG := $(TREE_PATH)/configs/egl.cfg
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
 # Flags
@@ -74,13 +70,13 @@ BOARD_CHARGER_SHOW_PERCENTAGE := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+TARGET_SYSTEM_PROP := $(TREE_PATH)/system.prop
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(TREE_PATH)/bluetooth
 
 # GPS
 BOARD_GPS_LIBRARIES := true
@@ -126,7 +122,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(TREE_PATH)/rootdir/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -138,4 +134,4 @@ BOARD_SEPOLICY_DIRS := \
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 
 # RIL
-BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
+BOARD_RIL_CLASS := ../../../$(TREE_PATH)/ril
