@@ -1,6 +1,6 @@
 # Paths
-TREE_PATH := device/walton/nf2
-VENDOR_PATH := vendor/walton/nf2
+TREE_PATH := device/Doogee/X6
+VENDOR_PATH := vendor/Doogee/X6
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # call vendor vlobs
-$(call inherit-product, $(VENDOR_PATH)/nf2-vendor.mk)
+$(call inherit-product, $(VENDOR_PATH)/X6-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(TREE_PATH)/overlay
 
@@ -20,7 +20,7 @@ PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := nf2,primo_nf2,walton
+TARGET_OTA_ASSERT_DEVICE := X6,Doogee_X6,Doogee
 
 # Display
 TARGET_SCREEN_WIDTH       := 720
@@ -264,14 +264,14 @@ PRODUCT_PACKAGES += \
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Kernel
-TARGET_PREBUILT_KERNEL := $(TREE_PATH)/kernel.nf2
+TARGET_PREBUILT_KERNEL := $(TREE_PATH)/kernel.X6
 
 # Device info
-PRODUCT_RELEASE_NAME := nf2
-PRODUCT_DEVICE := nf2
-PRODUCT_NAME := full_nf2
-PRODUCT_BRAND := Walton
-PRODUCT_MODEL := Primo NF2
-PRODUCT_MANUFACTURER := Walton
+PRODUCT_RELEASE_NAME := X6
+PRODUCT_DEVICE := X6
+PRODUCT_NAME := full_X6
+PRODUCT_BRAND := Doogee
+PRODUCT_MODEL := Doogee_X6
+PRODUCT_MANUFACTURER := Doogee
 PRODUCT_RESTRICT_VENDOR_FILES := false
 EXTENDED_FONT_FOOTPRINT := true
