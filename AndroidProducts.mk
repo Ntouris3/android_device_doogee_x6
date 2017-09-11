@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nf2.mk
+    $(LOCAL_DIR)/X6.mk
