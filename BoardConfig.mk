@@ -1,5 +1,5 @@
 # Paths
-TREE_PATH := device/walton/nf2
+TREE_PATH := device/Doogee/X6
 
 # MT6580 platform boardconfig
 TARGET_SPECIFIC_HEADER_PATH := $(TREE_PATH)/include
