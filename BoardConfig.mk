@@ -128,7 +128,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/infinix/x510/sepolicy
+       device/Doogee/X6/sepolicy
 
 # Hack for building without kernel sources
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
